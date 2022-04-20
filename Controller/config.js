@@ -6,12 +6,15 @@ const knex = require("../database/db");
 
 
 const GetData = async (req, res) => {
+    console.log('req come at get data controller');
     let a = await knex.select("*").from("RegistrationForm");
-    res.send(a)
-
+    res.json(a)
+    
 }
 // post data into table
 const PostData = async (req, res) => {
+    console.log('req come at post data controller');
+    console.log(req.body);
     const Data = {
         FirstName: req.body.FirstName,
         LastName: req.body.LastName,
