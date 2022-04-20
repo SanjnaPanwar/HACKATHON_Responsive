@@ -6,7 +6,7 @@ const knex = require("../database/db");
 
 
 const GetData = async (req, res) => {
-    a = await knex.select("*").from("RegistrationForm");
+    let a = await knex.select("*").from("RegistrationForm");
     res.send(a)
 
 }
