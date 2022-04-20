@@ -28,14 +28,14 @@ const PostData = async (req, res) => {
         Current_Date: req.body.Current_Date
 
     };
+    console.log(Data);
     await knex("RegistrationForm").insert(Data)
         // res.send(Data)
         .then(result => {
             res.send("Record inserted Successfully")
         }).catch((err) => {
             console.log(err.sqlMessage)
-            res.status(500)
-            res.json(err.sqlMessage)
+            res.status(500).json(err.sqlMessage)
         })
 }
 
